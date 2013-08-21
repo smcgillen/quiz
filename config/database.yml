@@ -17,7 +17,7 @@ development:
   encoding: unicode
   database: quiz_development
   pool: 5
-  username: smcgillen
+  username: willybuttvangelderen
   host:   localhost
   password:
 
