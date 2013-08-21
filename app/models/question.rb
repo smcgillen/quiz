@@ -16,26 +16,42 @@ attr_accessible :exam_id, :question
 belongs_to :exam
 has_many :answers
 
-# def answer
+def correct_answer
+  if answer.correct = true
+  end
+
+def incorrect_answer
+  if answer.correct = false
+  end
+
+# exam.q1.correct_answer
+
+
+
+# u1.e1.q1.correct_answer
+
+
+
+# def correct_answer
 #    uncorrect
-#    choices.select {|c| c.correct}[0]
+#    answers.select {|c| c.correct}[0]
 #   end
 
 #   def uncorrect
-#    choices.each {|c| c.correct = false}
+#    answers.each {|c| c.correct = false}
 #   end
 
-#   def answer= choice
+#   def correct_answer= answer
 #    if !answer.nil?
 #     answer.correct = false
 #    end
 
-#    if choices.include? choice
-#     choice.correct = true
-#    else
-#     choices << choice
-#     choice.correct = true
-#    end
-#   end
+   if answers.include? answer
+    answer.correct = true
+   else
+    answers << answers
+    answer.correct = true
+   end
+  end
 
 end

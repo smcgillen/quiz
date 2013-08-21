@@ -1,4 +1,9 @@
 Quiz::Application.routes.draw do
+resources :questions, :exams, :home, :answers, :attempts
+
+resources :users
+
+
    root :to => 'home#index'
 end
 
