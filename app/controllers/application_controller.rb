@@ -14,4 +14,8 @@ private
 		redirect_to(root_path)
 		end
 	end
+
+	def check_if_admin
+		redirect_to(root_path) if @auth.nil? || @auth.is_admin?
+	end
 end
