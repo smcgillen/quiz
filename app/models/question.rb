@@ -24,9 +24,6 @@ has_many :answers
 #   if answer.correct = false
 # end
 
-
-
-
 # def correct_answer
 #    uncorrect
 #    answers.select {|c| c.correct}[0]
@@ -41,11 +38,11 @@ has_many :answers
 #     answer.correct = false
 #    end
 
-   if answers.include? answer
-    answer.correct = true
-   else
-    answers << answers
-    answer.correct = true
-   end
-  end
+  #  if answers.include? answer
+  #   answer.correct = true
+  #  else
+  #   answers << answers
+  #   answer.correct = true
+  #  end
+  # end
 end
