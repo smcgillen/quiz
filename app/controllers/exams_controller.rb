@@ -1,18 +1,21 @@
 class ExamsController < ApplicationController
   def index
     @exams = Exam.all
+    @users = User.all
+  end
+
+  def new
+    @exam = Exam.new(params[:exam])
+    @question = @exam.questions.new(params[:question])
   end
 
   def create
-    @exam = current_user.exams.new(params[:exam])
-    @exam.save
-    redirect_to(new_exam_path)
+    @exam = Exam.new(params[:exam])
   end
 
 def show
     @users = User.all
     @exams = Exam.all
-    @exams = Exam.find(params[:id])
     @exam = Exam.find(params[:id])
 end
 
