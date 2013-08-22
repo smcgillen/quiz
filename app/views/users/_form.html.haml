@@ -1,8 +1,14 @@
 %div.row
 	%div.col-lg-3
 		= form_for @user, :remote => true do |f|
+			= f.label :name
+			= f.text_field :name, :autofocus => true
+			= f.label :username
+			= f.text_field :username
 			= f.label :email
-			= f.text_field :email, :autofocus => true
+			= f.text_field :email
+			= f.label :email
+			= f.text_field :email
 			= f.label :password
 			= f.password_field :password
 			= f.label :password_confirmation
