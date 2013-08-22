@@ -5,8 +5,8 @@ resources :users
 
 
    root :to => 'home#index'
+
+   get '/login' => 'session#new'
+   get '/login' => 'session#create'
+   get '/logout' => 'session#destroy'
 end
-
-
-# git remote add origin https://github.com/smcgillen/quiz.git
-# git push -u origin master

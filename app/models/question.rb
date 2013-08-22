@@ -48,5 +48,4 @@ has_many :answers
     answer.correct = true
    end
   end
-
 end
