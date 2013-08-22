@@ -16,19 +16,14 @@ attr_accessible :exam_id, :question
 belongs_to :exam
 has_many :answers
 
-def correct_answer
-  if answer.correct = true
-  end
+# def correct_answer
+#   if answer.correct = true
+# end
 
-def incorrect_answer
-  if answer.correct = false
-  end
+# def incorrect_answer
+#   if answer.correct = false
+# end
 
-# exam.q1.correct_answer
-
-
-
-# u1.e1.q1.correct_answer
 
 
 
