@@ -53,5 +53,4 @@ def incorrect_answer
     answer.correct = true
    end
   end
-
 end
