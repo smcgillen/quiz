@@ -1,0 +1,8 @@
+- if user.is_admin?
+        %span.label.alert.radius= user.name
+      - else
+        %span.label.success.radius= user.name
+    %td= image_tag(user.image)
+    %td= link_to('Delete', user, :method => :delete, :confirm => 'Really?', :class => 'btn btn-danger btn-sm') if user != @auth
+- @users.each do |user|
+%li= "#{user.email}"

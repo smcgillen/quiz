@@ -8,10 +8,12 @@ class UsersController < ApplicationController
 	end
 
 	def create
-		User.create(params[:user])
-		@users = User.order(:email)
-		respond_to do |format|
-		format.js { render :create }
+		@user = User.new(params[:user])
+		if @user.save 
+		redirect_to(root_path)
+		else
+		@obj = @user
+		render :form
 		end
 	end
 end
