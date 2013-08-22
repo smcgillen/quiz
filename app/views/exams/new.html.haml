@@ -1,0 +1,10 @@
+%div.row
+  %div.columns.large-5
+    %div.new_exam
+      = form_for @exam do |f|
+        = f.label 'Create an exam topic'
+        = f.text_field :topic, :autofocus => true
+        = f.label 'Enter your first question'
+        / = f.text_field :question
+        = f.submit 'Create Exam'
+        = link_to('Create Exam', new_question_path, :class => 'button radius tiny')

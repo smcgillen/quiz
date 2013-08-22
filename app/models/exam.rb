@@ -17,4 +17,13 @@ class Exam < ActiveRecord::Base
 
   belongs_to :user
 
+  def current_exam
+    current_exam = @auth.exams
+  end
+
+  def user_avatar
+    user.avatar if user
+  end
+
+
 end
