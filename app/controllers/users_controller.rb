@@ -1,19 +1,18 @@
 class UsersController < ApplicationController
 	def new
-		@user = User.new
+	@user = User.new
 	end
 
 	def index
-		@users = User.all
+	@users = User.all
+	@balance = params[:balance]
 	end
 
 	def create
-		@user = User.new(params[:user])
-		if @user.save 
-		redirect_to(root_path)
-		else
-		@obj = @user
-		render :form
-		end
+	User.create(params[:user])
+	@users = User.order(:email)
+	respond_to do |format|
+	format.js { render :create }
+	end
 	end
 end
