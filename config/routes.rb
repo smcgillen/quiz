@@ -1,12 +1,12 @@
 Quiz::Application.routes.draw do
 resources :questions, :exams, :home, :answers, :attempts
 
-resources :users, :except => [:new]
+resources :users
 
 
    root :to => 'home#index'
 
    get '/login' => 'session#new'
-   get '/login' => 'session#create'
+   post '/login' => 'session#create'
    get '/logout' => 'session#destroy'
 end
