@@ -15,3 +15,26 @@ div.spacer {
   margin: 0 auto;
   padding: 60px;
 }
+
+li {
+  list-style: none;
+    padding: 5px;
+
+}
+
+div.title {
+  width: %50;
+  text-align: center;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #ccc;
+  border-radius: 6px;
+}
+
+
+div.question {
+  margin: 10px auto;
+  padding: 20px;
+  background-color: #edd16f;
+  border-radius: 6px;
+}

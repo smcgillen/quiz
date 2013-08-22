@@ -7,6 +7,7 @@ class ExamsController < ApplicationController
   def new
     @exam = Exam.new(params[:exam])
     @question = @exam.questions.new(params[:question])
+    @answer = @question.answers.new(params[:answer])
   end
 
   def create

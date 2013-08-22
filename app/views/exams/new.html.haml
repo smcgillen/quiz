@@ -1,10 +1,43 @@
 %div.row
-  %div.columns.large-5
+  %div.col-lg-12
     %div.new_exam
+    %ul
       = form_for @exam do |f|
-        = f.label 'Create an exam topic'
-        = f.text_field :topic, :autofocus => true
-        = f.label 'Enter your first question'
-        / = f.text_field :question
-        = f.submit 'Create Exam'
-        = link_to('Create Exam', new_question_path, :class => 'button radius tiny')
+        %div.title
+          = f.label 'Create an exam topic'
+          %br
+          = f.text_field :topic, :autofocus => true
+        / %li= f.label 'Enter your first question'
+      %div.question
+        = form_for @question do |f|
+          %li= f.label 'Enter Question 1'
+          = f.text_field :question
+          %hr
+          %li= f.label 'Enter the answers for the first question:'
+        %div.row
+          = form_for @answer do |f|
+
+            %div.col-lg-3
+              %li= f.label 'A1'
+              = f.text_field :description
+              %li= f.label :correct, 'Is this the correct answer?'
+              %li= f.check_box :correct
+
+            %div.col-lg-3
+              %li= f.label 'A2'
+              = f.text_field :description
+              %li= f.label :correct, 'Is this the correct answer?'
+              %li= f.check_box :correct
+
+            %div.col-lg-3
+              %li= f.label 'A3'
+              = f.text_field :description
+              %li= f.label :correct, 'Is this the correct answer?'
+              %li= f.check_box :correct
+
+            %div.col-lg-3
+              %li= f.label 'A4'
+              = f.text_field :description
+              %li= f.label :correct, 'Is this the correct answer?'
+              %li= f.check_box :correct
+
