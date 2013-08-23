@@ -11,6 +11,6 @@ resources :users
 
 	get '/works' => 'home#works'
 
-	get '/contact' => 'home#'
+	get '/contact' => 'home#contact'
 
 end
