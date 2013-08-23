@@ -6,12 +6,22 @@ class ExamsController < ApplicationController
 
   def new
     @exam = Exam.new(params[:exam])
-    @question = @exam.questions.new(params[:question])
-    @answer = @question.answers.new(params[:answer])
+    # @question = @exam.questions.new(params[:question])
+    # @answer = @question.answers.new(params[:answer])
+    # 10.times { @exam.questions.build }
+
+    10.times do
+      question = @exam.questions.build
+      # answer = question.answers.build
+      4.times { question.answers.build}
+    end
   end
+
 
   def create
     @exam = Exam.new(params[:exam])
+    @exam.save
+    redirect_to exams_path
   end
 
 def show

@@ -4,40 +4,18 @@
     %ul
       = form_for @exam do |f|
         %div.title
-          = f.label 'Create an exam topic'
+          = f.label :topic, 'Create an exam topic'
           %br
           = f.text_field :topic, :autofocus => true
-        / %li= f.label 'Enter your first question'
-      %div.question
-        = form_for @question do |f|
-          %li= f.label 'Enter Question 1'
-          = f.text_field :question
-          %hr
-          %li= f.label 'Enter the answers for the first question:'
-        %div.row
-          = form_for @answer do |f|
+          / = f.label 'Enter your first question'
+        %div.question
+          = f.fields_for :questions do |builder|
+            = render "question_fields", :f => builder
+        = f.submit "Submit", :class => 'btn btn-success'
 
-            %div.col-lg-3
-              %li= f.label 'A1'
-              = f.text_field :description
-              %li= f.label :correct, 'Is this the correct answer?'
-              %li= f.check_box :correct
 
-            %div.col-lg-3
-              %li= f.label 'A2'
-              = f.text_field :description
-              %li= f.label :correct, 'Is this the correct answer?'
-              %li= f.check_box :correct
 
-            %div.col-lg-3
-              %li= f.label 'A3'
-              = f.text_field :description
-              %li= f.label :correct, 'Is this the correct answer?'
-              %li= f.check_box :correct
 
-            %div.col-lg-3
-              %li= f.label 'A4'
-              = f.text_field :description
-              %li= f.label :correct, 'Is this the correct answer?'
-              %li= f.check_box :correct
+
+
 

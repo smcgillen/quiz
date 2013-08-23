@@ -67,6 +67,7 @@ GEM
       treetop (~> 1.4.8)
     mime-types (1.24)
     multi_json (1.7.9)
+    nested_form (0.3.2)
     nokogiri (1.5.10)
     paperclip (3.5.1)
       activemodel (>= 3.0.0)
@@ -139,6 +140,7 @@ DEPENDENCIES
   haml
   jquery-rails
   json
+  nested_form
   paperclip (~> 3.0)
   pg (= 0.15.1)
   rails (= 3.2.13)

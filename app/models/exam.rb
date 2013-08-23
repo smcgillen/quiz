@@ -11,10 +11,11 @@
 
 class Exam < ActiveRecord::Base
 
-  attr_accessible :topic, :user_id
-  has_many :questions
-  has_many :answers
+  attr_accessible :topic, :user_id, :questions_attributes
+  has_many :questions, :dependent => :destroy
 
+
+  accepts_nested_attributes_for :questions
   belongs_to :user
 
   def current_exam
