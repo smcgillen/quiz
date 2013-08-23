@@ -9,5 +9,9 @@
 			= f.password_field :password
 			= f.label :password_confirmation
 			= f.password_field :password_confirmation
+			= f.label :location
+			= f.text_field :location, :rows => 5
+			= f.label :avatar
+			= f.file_field :avatar
 			= f.submit nil, :class => 'button radius'
 %div.col-lg-9
