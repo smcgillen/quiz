@@ -1,0 +1,10 @@
+%li= f.label :question, 'Enter your Question '
+%li= f.text_area :question, :rows => 2
+%div.row
+  = f.fields_for :answers do  |answer_form|
+    %div.col-lg-3
+      %li= answer_form.label 'Answer '
+      %li= answer_form.text_field :description
+      %li= answer_form.label :correct, 'Is this the correct answer?'
+      %li= answer_form.check_box :correct
+%hr

@@ -11,10 +11,12 @@
 
 class Question< ActiveRecord::Base
 
-attr_accessible :exam_id, :question
+attr_accessible :exam_id, :question, :answers_attributes
 
 belongs_to :exam
 has_many :answers
+
+accepts_nested_attributes_for :answers
 
 # def correct_answer
 #   if answer.correct = true
