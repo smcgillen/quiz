@@ -14,5 +14,7 @@ class UsersController < ApplicationController
 	respond_to do |format|
 	format.js { render :create }
 	end
+
+	
 	end
 end
