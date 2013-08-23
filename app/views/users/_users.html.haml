@@ -1,13 +1,10 @@
 %table#users
-	- @users.each do |user|
-		%tr
-			%td
-				- if user.is_admin?
-					%span.label.alert.radius= user.username
-				- else
-					%span.label.success.radius= user.username
-			%td= image_tag(user.avatar)
-			%td= user.email
-			%td= link_to('Delete', user, :method => :delete, :confirm => 'Really?', :class => 'button radius alert tiny') if user != @auth
-
-
+  - @users.each do |user|
+    %tr
+      %td
+        - if user.is_admin?
+          %span.label.alert= user.username
+        - else
+          %span.label.success= user.username
+      %td= image_tag(user.avatar)
+      %td= link_to('Delete', user, :method => :delete, :confirm => 'Really?', :class => 'btn btn-danger btn-sm') if user != @auth

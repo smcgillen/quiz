@@ -1,13 +1,3 @@
-%table#users
-  - @users.each do |user|
-    %tr
-      %td
-        - if user.is_admin?
-          %span.label.alert= user.username
-        - else
-          %span.label.success= user.username
-      %td= image_tag(user.avatar)
-      %td= link_to('Delete', user, :method => :delete, :confirm => 'Really?', :class => 'btn btn-danger btn-sm') if user != @auth
 
 %div#userbutton= link_to('New User', new_user_path, :remote => true, :class => 'btn btn-success btn-sm')
 %div#new_user
