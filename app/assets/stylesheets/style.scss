@@ -1,13 +1,18 @@
+$lightblue: #00B3AD;
+$white: #fff;
+$orange: #FF6008;
+
+
 footer {
-  background-color: #FF6008;
-  color: #fff;
+  background-color: $orange;
+  color: $white;
   a {
-    color: #fff;
+    color: $white;
   }
 }
 
 h2 {
-color: #00B3AD
+color: $lightblue;
 }
 /* Move down content because we have a fixed navbar that is 50px tall */
 body {
