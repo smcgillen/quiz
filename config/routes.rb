@@ -13,4 +13,7 @@ resources :users
 
   root :to => 'home#index'
 
+  post '/search/' => 'home#search'
+
+
 end
