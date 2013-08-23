@@ -29,6 +29,7 @@ def show
     @users = User.all
     @exams = Exam.all
     @exam = Exam.find(params[:id])
+    # @current_question = Exam.question.find(params[:id])
 end
 
   def edit

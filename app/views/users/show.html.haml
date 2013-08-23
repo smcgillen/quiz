@@ -1,12 +1,19 @@
 %div.col-lg-12
   %div.btn.btn-primary
     = @user.username
+  %h2=@user.location
   %div.col-lg-12
     = image_tag(@user.avatar)
+
   %div.btn.btn-success
     %h2 See my exams
     - @exams.each do |exam|
-      = @exam
+      = link_to(exam.topic, exam)
+      = time_ago_in_words(exam.created_at) + " ago"
+
+
+
+
 
 
 

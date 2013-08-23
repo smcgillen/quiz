@@ -10,8 +10,7 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @exams = @user.exams
-    @exam = @user.exam
-
+    # @exam = Exam.find(params[:id])
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @user }
@@ -23,7 +22,6 @@ class UsersController < ApplicationController
 	end
 
 	def create
-		User.create(params[:user])
 		@user = User.new(params[:user])
 
 		respond_to do |format|

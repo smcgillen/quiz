@@ -1,0 +1,1 @@
+$('.move_exam').css('left', '100%');
