@@ -19,10 +19,16 @@ class Score
   @user.attempts each.do |answer|
     for :correct?
       correct = 10
+      correct * 10
     end
     # Updates `scores` array with tricky database lookups
   end
 
 end
 
+
+[
+xkeys: 'scores'
+ykey exam:topic
+]
 
