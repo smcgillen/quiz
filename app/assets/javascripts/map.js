@@ -1,31 +1,3 @@
-// var map;
-// var canvas;
-
-// var display_map = function (lat, long, zoom) {
-
-//   canvas = $('#map_canvas')[0];
-
-//   if (! canvas)
-//     return; // I QUIT
-
-//   var mapOptions = {
-//     center: new google.maps.LatLng(lat, long),
-//     zoom: zoom,
-//     mapTypeId: google.maps.MapTypeId.ROADMAP
-//   };
-
-//   map = new google.maps.Map(canvas, mapOptions);
-// };
-
-//   var center_map = function (lat,long,zoom){
-//     var latlong = new google.maps.LatLng(lat, long);
-//     map.setCenter(latlong);
-//   }
-
-
-// $(document).ready(function () {
-//   display_map(-33.89336, 151.217167, 13);
-// });
 $(document).ready(function () {
 
 
@@ -81,6 +53,39 @@ function handleNoGeolocation(errorFlag) {
 }
 
 google.maps.event.addDomListener(window, 'load', initialize);
+
+$('#search_field').bind('keypress', function(e) {
+  if(e.keyCode==13){
+    $('#search_submit').trigger('click');
+  }
+});
+
+
+$('#search_submit').click(function() {
+    var search = $('#search_field').val(); //defined var search to the value input by the user inside the search box
+
+    $.ajax({
+
+        dataType: 'json',
+        data: {
+          'location': search //the data sent via ajax is in a hash so created a :location key for the search variable
+        },
+        type: 'post',
+        url: '/search/', //change the routes to make this url go to the correct controller which is home and create a method called search inside of it
+    }).done(function(data) { //function(data) is getting back the shit we got from the controller
+        var lat = data.latitude //the data we got is the variables we set in the controller
+        var longi = data.longitude
+      // $('#map_canvas').empty(); //empty the map area you were on
+     center_map(lat, longi)
+
+      });
+     });//call the display map function above which displays it with the lat and long we got from the controller
+
+
+  var center_map = function (lat,long,zoom){
+    var latlong = new google.maps.LatLng(lat, long);
+    map.setCenter(latlong);
+  }
 
 
 
