@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_filter :check_if_logged_in, :except => [:new, :create]
-  before_filter :check_if_admin, :only => [:destroy]
+  # before_filter :check_if_admin, :only => [:destroy]
 
 
 	def new

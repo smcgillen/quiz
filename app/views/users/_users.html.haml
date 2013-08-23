@@ -2,8 +2,9 @@
   - @users.each do |user|
     %tr
       %td
-        - if user.is_admin?
+        - if @auth.is_admin?
           %span.label.alert= user.username
+          %span= user.email
         - else
           %span.label.success= user.username
       %td= image_tag(user.avatar)

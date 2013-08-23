@@ -19,6 +19,9 @@
             <!-- <a href="/login"><button class="btn btn-success">Login</button></a> -->
             <a href="/users/new"><button class="btn btn-primary btn-sm">Register</button></a>
             <span id="loginname"><%= login_nav %></span>
+            <% if @auth %>
+              <a href="/users/"><button class="btn btn-primary btn-sm">Users</button></a>
+            <% end %>
           </div>
         </div><!--/.navbar-collapse -->
       </div>
