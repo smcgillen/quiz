@@ -7,11 +7,10 @@ resources :users
 	get '/login' => 'session#new'
 	post '/login' => 'session#create'
 	get '/logout' => 'session#destroy'
-
 	get '/about' => 'home#about'
 
 	get '/works' => 'home#works'
 
-	get '/contact' => 'home#contact'
+	get '/contact' => 'home#'
 
 end
