@@ -1,0 +1,16 @@
+%div.col-lg-12
+  %div.btn.btn-primary
+    = @user.username
+  %div.col-lg-12
+    = image_tag(@user.avatar)
+  %div.btn.btn-success
+    %h2 See my exams
+    - @exams.each do |exam|
+      = @exam
+
+
+
+    / = link_to('Delete My Account', @user, :method => :delete, :confirm => 'Really?', :class => 'btn btn-danger btn-sm') if @user != @auth
+
+
+

@@ -1,17 +1,18 @@
 %div.row
 	%div.col-lg-3
 		= form_for @user do |f|
-			= f.label :username, :autofocus => true
-			= f.text_field :username
-			= f.label :email
-			= f.text_field :email
-			= f.label :password
-			= f.password_field :password
-			= f.label :password_confirmation
-			= f.password_field :password_confirmation
-			= f.label :location
-			= f.text_field :location, :rows => 5
-			= f.label :avatar
-			= f.file_field :avatar
-			= f.submit nil, :class => 'button radius'
+			%ul
+				%li= f.label :username, :autofocus => true
+				%li= f.text_field :username
+				%li= f.label :email
+				%li= f.text_field :email
+				%li= f.label :password
+				%li= f.password_field :password
+				%li= f.label :password_confirmation
+				%li= f.password_field :password_confirmation
+				%li= f.label :location
+				%li= f.text_field :location, :rows => 5
+				%li= f.label :avatar
+				%li= f.file_field :avatar
+				%li= f.submit nil, :class => 'button radius'
 %div.col-lg-9

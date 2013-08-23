@@ -1,11 +1,12 @@
-%table#users
+%div.row#users
   - @users.each do |user|
-    %tr
-      %td
-        - if @auth.is_admin?
-          %span.label.alert= user.username
-          %span= user.email
-        - else
-          %span.label.success= user.username
-      %td= image_tag(user.avatar)
-      %td= link_to('Delete', user, :method => :delete, :confirm => 'Really?', :class => 'btn btn-danger btn-sm') if user != @auth
+    %div.col-lg-12
+      - if @auth.is_admin?
+        %span.label.alert= user.username
+        %span= user.email
+
+      - else
+        %div.btn.btn-primary
+          = link_to(user.username, user_path(user), :class => 'white')
+    %div.col-lg-12
+      = image_tag(user.avatar)

@@ -10,7 +10,7 @@ class ExamsController < ApplicationController
     # @answer = @question.answers.new(params[:answer])
     # 10.times { @exam.questions.build }
 
-    10.times do
+    2.times do
       question = @exam.questions.build
       # answer = question.answers.build
       4.times { question.answers.build}
@@ -20,6 +20,7 @@ class ExamsController < ApplicationController
 
   def create
     @exam = Exam.new(params[:exam])
+    @exam.user_id = @auth.id
     @exam.save
     redirect_to exams_path
   end

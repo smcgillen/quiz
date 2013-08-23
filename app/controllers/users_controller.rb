@@ -9,6 +9,8 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @exams = @user.exams
+    @exam = @user.exam
 
     respond_to do |format|
       format.html # show.html.erb
@@ -22,7 +24,6 @@ class UsersController < ApplicationController
 
 	def create
 		User.create(params[:user])
-		@users = User.order(:email)
 		@user = User.new(params[:user])
 
 		respond_to do |format|
@@ -74,4 +75,3 @@ class UsersController < ApplicationController
     redirect_to(root_path) if @auth.nil? || !@auth.is_admin?
   end
 end
-		
