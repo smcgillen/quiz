@@ -8,9 +8,10 @@ resources :users
 	post '/login' => 'session#create'
 	get '/logout' => 'session#destroy'
 	get '/about' => 'home#about'
-
+	get '/quizzes' => 'home#quizzes'
 	get '/works' => 'home#works'
-
 	get '/contact' => 'home#contact'
+
+
 
 end
