@@ -11,16 +11,16 @@
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
             <li class="active"><a href="/">Home</a></li>
-            <li><a href="/exams/new">Create Quiz</a></li>
-            <li><a href="/quizzes">Browse All</a></li>
+            <li><a href="/exams/new">Create a Quiz</a></li>
+            <li><a href="/exams">Take a Quiz</a></li>
           </ul>
-          <div class="navbar pull-right">
+          <div class="user_nav pull-right">
             <ul>
-            <!-- <a href="/login"><button class="btn btn-success">Login</button></a> -->
             <a href="/users/new"><p class="btn btn-primary btn-sm">Register</p></a>
             <span id="loginname"><%= login_nav %></span>
             <% if @auth %>
               <a href="/users/"><p class="btn btn-primary btn-sm">Users</p></a>
+              <p class="btn btn-primary btn-sm"><%= link_to('My Profile', @auth, :class => "whitey")%></p>
             <% end %>
           </div>
         </div><!--/.navbar-collapse -->

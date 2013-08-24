@@ -13,5 +13,5 @@
 //= require jquery
 //= require jquery_ujs
 //= require 'bootstrap.js'
-
+//= require 'quiz_events.js'
 //= require_tree .

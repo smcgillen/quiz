@@ -4,7 +4,7 @@
   - @exams.each do |exam|
     %li= image_tag(exam.user_avatar)
     / %li= exam.user.username
-    %li= link_to(exam.topic, exam.user, :class => "btn btn-success")
+    %li= link_to(exam.topic, exam, :class => "btn btn-success")
     %li= time_ago_in_words(exam.created_at) + "ago"
 
 

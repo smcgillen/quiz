@@ -4,7 +4,7 @@
       <div class="container">
         <h1>Welcome to QuizIt!</h1>
         <p>QuizIt allows you to create and share quizzes to help you learn anything for free!</p>
-        <p><a class="btn btn-primary btn-lg">Browse Quizzes &raquo;</a></p>
+        <p><a href="/exams" class="btn btn-primary btn-lg">Take a Quiz &raquo;</a></p>
       </div>
     </div>
 
@@ -17,7 +17,8 @@
           <h2>See Who's On QuizIt!</h2>
           <div id="search">
             <%= text_field_tag :address, nil,  :placeholder => 'SEARCH ', :id =>"search_field" %>
-            <%= button_tag 'Search', :id => 'search_submit', :class => 'btn btn-primary'%>
+            <p class="btn btn-primary btn-lg" id="search_submit">Search</p>
+<!--             <!%#= button_tag 'Search', :id => 'search_submit', :class => 'btn btn-primary'%> -->
           </div>
           <%= render 'home/map' %>
 
