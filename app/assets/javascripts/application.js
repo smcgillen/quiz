@@ -14,5 +14,5 @@
 //= require jquery_ujs
 //= require 'bootstrap.js'
 //= require 'quiz_events.js'
-//= require jquery_cycle_lite.js
+//= require 'jquery_cycle_lite.js'
 //= require_tree .

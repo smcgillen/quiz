@@ -10,10 +10,11 @@ class ExamsController < ApplicationController
     # @answer = @question.answers.new(params[:answer])
     # 10.times { @exam.questions.build }
 
-    2.times do
+    10.times do
       question = @exam.questions.build
       # answer = question.answers.build
       4.times { question.answers.build}
+
     end
   end
 
@@ -23,12 +24,20 @@ class ExamsController < ApplicationController
     @exam.user_id = @auth.id
     @exam.save
     redirect_to exams_path
+    @attempt = Attempt.new(params[:attempt])
+    @attempt.save
+
+
   end
 
 def show
     @users = User.all
     @exam = Exam.find(params[:id])
     @questions = @exam.questions
+    @attempt = Attempt.new(params[:attempt])
+
+    # @answer = Answer.find(params[:id])
+
     # @current_question = Exam.question.find(params[:id])
 end
 
