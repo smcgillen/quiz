@@ -13,4 +13,5 @@
 //= require jquery
 //= require jquery_ujs
 //= require 'bootstrap.js'
+//= require 'quiz_chart.js'
 //= require_tree .
