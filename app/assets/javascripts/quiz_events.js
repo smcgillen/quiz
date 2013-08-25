@@ -1,5 +1,5 @@
 $('.move_exam').click(function () {
-  $('#mover').css('left', '300%');
+  $('#mover').css('left', '200%');
 });
 
 var loading = function(e) {

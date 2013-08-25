@@ -27,8 +27,8 @@ class ExamsController < ApplicationController
 
 def show
     @users = User.all
-    @exams = Exam.all
     @exam = Exam.find(params[:id])
+    @questions = @exam.questions
     # @current_question = Exam.question.find(params[:id])
 end
 

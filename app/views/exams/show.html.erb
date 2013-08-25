@@ -1,14 +1,90 @@
-<div class="mover">
-<h4><%=@exam.topic %> Quiz </h4>
-<h1>This is Question 1</h1>
+<div id="mover">
+<h4>This <%=@exam.topic %> Quiz </h4>
+<h1>Question 1 - <%=@questions.first.question %></h1>
 <h2>Pick an Answer:</h2>
 <table style="text-align: center; margin: 0 auto;">
   <tr>
-    <td><button data-label="Model Versus Money" id="move_exam">Model Versus Money</button></td>
-    <td><button data-label="Model Versus Money" id="move_exam">Model Versus Money</button></td>
-        <td><button data-label="Model Versus Money" id="move_exam">Model Versus Money</button></td>
-        <td><button data-label="Model Versus Money" id="move_exam">Model Versus Money</button></td>
+
+    <td><button data-label="Model Versus Money" class="move_exam">this is answer</button></td>
+    <td><button data-label="Model Versus Money" class="move_exam">this is answer</button></td>
+        <td><button data-label="Model Versus Money" class="move_exam">this is answer</button></td>
+        <td><button data-label="Model Versus Money" class="move_exam">this is answer</button>
+
+        </td>
   </tr>
 </table>
 </div>
+
+<div id="mover">
+<h4>This <%=@exam.topic %> Quiz </h4>
+<h1>Question 1 - <%=@questions.question %></h1>
+<h2>Pick an Answer:</h2>
+<table style="text-align: center; margin: 0 auto;">
+  <tr>
+
+    <td><button data-label="Model Versus Money" class="move_exam">this is answer</button></td>
+    <td><button data-label="Model Versus Money" class="move_exam">this is answer</button></td>
+        <td><button data-label="Model Versus Money" class="move_exam">this is answer</button></td>
+        <td><button data-label="Model Versus Money" class="move_exam">this is answer</button>
+
+        </td>
+  </tr>
+</table>
+</div>
+
+<div id="mover">
+<h4>This <%=@exam.topic %> Quiz </h4>
+<h1>Question 1 - <%=@questions.first.question %></h1>
+<h2>Pick an Answer:</h2>
+<table style="text-align: center; margin: 0 auto;">
+  <tr>
+
+    <td><button data-label="Model Versus Money" class="move_exam">this is answer</button></td>
+    <td><button data-label="Model Versus Money" class="move_exam">this is answer</button></td>
+        <td><button data-label="Model Versus Money" class="move_exam">this is answer</button></td>
+        <td><button data-label="Model Versus Money" class="move_exam">this is answer</button>
+
+        </td>
+  </tr>
+</table>
+</div>
+
+
+
+
+
+<script>
+$(document).ready(function () {
+var loading = function(e) {
+  e.preventDefault();
+  e.stopPropagation();
+  e.target.classList.add('loading');
+  e.target.setAttribute('disabled','disabled');
+  setTimeout(function(){
+    e.target.classList.remove('loading');
+    e.target.removeAttribute('disabled');
+  },1500);
+};
+
+var btns = document.querySelectorAll('button');
+for (var i=btns.length-1;i>=0;i--) {
+  btns[i].addEventListener('click',loading);
+}
+
+ });
+
+// $('.move_exam').click(function () {
+//   $('#mover').hide();
+
+  $('.move_exam').cycle({
+    fx:      'scrollRight',
+    next:   '#mover',
+    timeout:  0,
+    easing:  'easeInOutBack'
+});
+
+
+});
+</script>
+
 
