@@ -18,4 +18,7 @@ attr_accessible :description, :correct, :question_id, :exam_id
 belongs_to :question
 belongs_to :exam
 
+has_many :attempts
+accepts_nested_attributes_for :attempts
+
 end

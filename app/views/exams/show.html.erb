@@ -1,29 +1,55 @@
 <div id="mover">
-  <%- @questions.each do |question| %>
+  <%- @questions.each_with_index do |question, index| %>
   <div id="questions">
     <h4>This <%=@exam.topic %> Quiz </h4>
-    <h1>Question "<%= @question_number %>" - <%= question.question %></h1>
+    <h1>Question <%= index + 1 %> - <%= question.question.capitalize %></h1>
     <h2>Pick an Answer:</h2>
     <table style="text-align: center; margin: 0 auto;">
       <tr>
         <%- question.answers.each do |answer| %>
           <td>
-            <!%= form_for @attempt, :remote =><!--  true  do |f| %> -->
+            <%= form_for @attempt, :remote => true do |f| %>
+              <%= f.hidden_field :answer_id, :value => answer.id %>
+              <%= f.hidden_field :user_id, :value => @auth.id %>
 
-<button data-label="<%= answer.description %>" class="move_exam" id = "button">this is answer</button>
-     <!%#=f.submit raw( "<%= answer.description %><!-- ", class => 'move_exam whitey' ) %> -->
-            <!@%# end %>
-          </td>
-
+                <%= f.submit answer.description, :type => :submit, :class => "move_exam whitey" %>
+                <% end %>
+        </td>
         <% end %>
       </tr>
     </table>
   </div>
   <% end %>
+
+<div id="exam_results">
+    <h1>Results</h1>
+    <h4>This <%=@exam.topic %> Quiz </h4>
+  <%- @questions.each do |question| %>
+
+    <h1>Question <%= @question_number %> - <%= question.question.capitalize %></h1>
+        <% question.answers.each do |answer| %>
+
+                <% if !answer.correct? %>
+                  <% answer %>
+                <% end %>
+<!--
+                  <!%# if answer.id == attempt.answer_id && answer.correct?%>
+                  <!%# answer.attempt %>
+                <!%# end %>
+ -->
+        <% end %>
+        <% end %>
+
+
+
+
+
+
 </div>
 
-
+  </div>
   <script>
+
   $(document).ready(function () {
   var loading = function(e) {
     e.preventDefault();
@@ -41,9 +67,13 @@
     btns[i].addEventListener('click',loading);
   }
 
-
   $('.move_exam').on('click', function() {
     $(this).closest('#questions').hide();
     });
 
+
+
+  });
 </script>
+
+

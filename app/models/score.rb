@@ -27,8 +27,8 @@ class Score
 end
 
 
-[
-xkeys: 'scores'
-ykey exam:topic
-]
+# [
+# xkeys: 'scores'
+# ykey exam:topic
+# ]
 

@@ -12,7 +12,6 @@
 class Attempt < ActiveRecord::Base
 
 attr_accessible :user_id, :answer_id
-
 belongs_to :user
 belongs_to :answer
 

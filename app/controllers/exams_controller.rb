@@ -6,13 +6,9 @@ class ExamsController < ApplicationController
 
   def new
     @exam = Exam.new(params[:exam])
-    # @question = @exam.questions.new(params[:question])
-    # @answer = @question.answers.new(params[:answer])
-    # 10.times { @exam.questions.build }
 
     10.times do
       question = @exam.questions.build
-      # answer = question.answers.build
       4.times { question.answers.build}
 
     end
@@ -24,21 +20,31 @@ class ExamsController < ApplicationController
     @exam.user_id = @auth.id
     @exam.save
     redirect_to exams_path
-    @attempt = Attempt.new(params[:attempt])
-    @attempt.save
+
 
 
   end
 
 def show
+
     @users = User.all
     @exam = Exam.find(params[:id])
     @questions = @exam.questions
+    # @attempts = @answer.attempts
     @attempt = Attempt.new(params[:attempt])
+    @exam.user_id = @auth.id
+    @attempt.save
 
-    # @answer = Answer.find(params[:id])
+    @question_number =
+          $i = 1
+      $num = 10
+      begin
+         puts("Inside the loop i = #$i" )
+         $i +=1
+      end while $i < $num
+      $i = @question_number
 
-    # @current_question = Exam.question.find(params[:id])
+
 end
 
   def edit
@@ -50,6 +56,12 @@ end
     exam = Exam.find(params[:id])
     exam.update_attributes(params[:exam])
     redirect_to(exam_path)
+
+    attempt = Attempt.new(params[:id])
+    attempt.update_attributes(params[:attempt])
+
+
+
   end
 
   def destroy

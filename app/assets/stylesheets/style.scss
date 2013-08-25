@@ -65,6 +65,19 @@ $orange: #FF6008;
   border-radius: 8px;
 }
 
+#exam_results {
+  color:#810d16;
+  position: relative;
+  overflow: hidden;
+  min-height: 500px;
+  position: absolute center;
+  margin: 0 auto;
+  padding: 20px 40px;
+  text-align: center;
+  background-color:#aecaed;
+  border-radius: 8px;
+}
+
 pre { text-align: left; overflow: visible }
 code { background-color: #ffc }
 pre code { background-color: #eee }
