@@ -1,0 +1,6 @@
+$('#new_user').fadeOut(function () { 
+	$(this).empty().show();
+});
+
+$('#users').html('<%=j render(:partial => 'users')  %>');
+$('#userbutton').fadeIn();

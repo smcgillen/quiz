@@ -1,0 +1,5 @@
+
+%div#userbutton= link_to('New User', new_user_path, :remote => true, :class => 'btn btn-success btn-sm')
+%div#new_user
+%ul#users
+= render(:partial => 'users')

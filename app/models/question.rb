@@ -11,26 +11,20 @@
 
 class Question< ActiveRecord::Base
 
-attr_accessible :exam_id, :question
+attr_accessible :exam_id, :question, :answers_attributes
 
 belongs_to :exam
 has_many :answers
 
-def correct_answer
-  if answer.correct = true
-  end
+accepts_nested_attributes_for :answers
 
-def incorrect_answer
-  if answer.correct = false
-  end
+# def correct_answer
+#   if answer.correct = true
+# end
 
-# exam.q1.correct_answer
-
-
-
-# u1.e1.q1.correct_answer
-
-
+# def incorrect_answer
+#   if answer.correct = false
+# end
 
 # def correct_answer
 #    uncorrect
@@ -46,12 +40,11 @@ def incorrect_answer
 #     answer.correct = false
 #    end
 
-   if answers.include? answer
-    answer.correct = true
-   else
-    answers << answers
-    answer.correct = true
-   end
-  end
-
+  #  if answers.include? answer
+  #   answer.correct = true
+  #  else
+  #   answers << answers
+  #   answer.correct = true
+  #  end
+  # end
 end

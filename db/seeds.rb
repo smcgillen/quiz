@@ -7,6 +7,9 @@ Answer.destroy_all
 u1 = User.create(:email => 'ryan@gmail.com', :password => '123456', :password_confirmation => '123456', :location => "508 Harris Street, Sydney", :username => "Ryan", )
 
 u2 = User.create(:email => 'tom@gmail.com', :password => '123456', :password_confirmation => '123456', :location => "508 Harris Street, Sydney", :username => "Tom", )
+u3 = User.create(:email => 'hui@gmail.com', :password => '123456', :password_confirmation => '123456', :location => "508 Harris Street, Sydney", :username => "Hui", )
+u3.is_admin = true
+u3.save
 
 e1 = Exam.new(:topic => "Rails" )
 

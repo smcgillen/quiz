@@ -1,0 +1,23 @@
+%div.col-lg-12
+  %div.btn.btn-primary
+    = @user.username
+  %h2=@user.location
+  %div.col-lg-12
+    = image_tag(@user.avatar)
+
+  %div.btn.btn-success
+    %h2 See my exams
+    - @exams.each do |exam|
+      = link_to(exam.topic, exam)
+      = time_ago_in_words(exam.created_at) + " ago"
+
+
+
+
+
+
+
+    / = link_to('Delete My Account', @user, :method => :delete, :confirm => 'Really?', :class => 'btn btn-danger btn-sm') if @user != @auth
+
+
+

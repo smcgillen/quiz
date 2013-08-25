@@ -10,6 +10,7 @@ gem 'client_side_validations'
 gem 'bcrypt-ruby', '~> 3.0.0'
 gem 'json'
 gem "paperclip", "~> 3.0"
+gem 'nested_form'
 
 gem 'haml'
 gem 'aws-sdk'

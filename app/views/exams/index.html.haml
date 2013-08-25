@@ -1,0 +1,10 @@
+%div#exam-container
+  = link_to('Create Exam', new_exam_path, :class => 'btn btn-success')
+  %ul
+    - @exams.each do |exam|
+      %li.h2= exam.user.username
+      / %li= exam.user.username
+      %li= link_to(raw(exam.topic + '  &raquo;'), exam, :class => "btn btn-primary")
+      %li= time_ago_in_words(exam.created_at) + "ago"
+
+

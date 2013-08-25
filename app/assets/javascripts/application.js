@@ -13,5 +13,10 @@
 //= require jquery
 //= require jquery_ujs
 //= require 'bootstrap.js'
+<<<<<<< HEAD
 //= require 'quiz_chart.js'
+=======
+//= require 'quiz_events.js'
+//= require jquery_cycle_lite.js
+>>>>>>> 07dbd046a14bbbb9d577d8b843679c76c472de77
 //= require_tree .

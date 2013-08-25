@@ -1,0 +1,21 @@
+%div.row
+  %div.col-lg-12
+    %div.new_exam
+    %ul
+      = form_for @exam do |f|
+        %div.title
+          = f.label :topic, 'Create an exam topic'
+          %br
+          = f.text_field :topic, :autofocus => true
+          / = f.label 'Enter your first question'
+        %div.question
+          = f.fields_for :questions do |builder|
+            = render "question_fields", :f => builder
+        = f.submit "Submit", :class => 'btn btn-success'
+
+
+
+
+
+
+

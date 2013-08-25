@@ -1,0 +1,12 @@
+%div.row#users
+  - @users.each do |user|
+    %div.col-lg-12
+      - if @auth.is_admin?
+        %span.label.alert= user.username
+        %span= user.email
+
+      - else
+        %div.btn.btn-primary
+          = link_to(user.username, user_path(user), :class => 'white')
+    %div.col-lg-12
+      = image_tag(user.avatar)
