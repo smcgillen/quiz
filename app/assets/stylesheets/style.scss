@@ -45,9 +45,17 @@ $orange: #FF6008;
 }
 
 #mover {
+  width: 100%;
+  height: 400px;
+  overflow: hidden;
   position: absolute center;
   margin: 0 auto;
+}
+
+#questions {
   min-height: 500px;
+  position: absolute center;
+  margin: 0 auto;
   padding: 20px 40px;
   text-align: center;
   background-color: #cabeed;
