@@ -2,6 +2,7 @@ class ExamsController < ApplicationController
   def index
     @exams = Exam.all
     @users = User.all
+
   end
 
   def new
@@ -34,15 +35,6 @@ def show
     @attempt = Attempt.new(params[:attempt])
     @exam.user_id = @auth.id
     @attempt.save
-
-    @question_number =
-          $i = 1
-      $num = 10
-      begin
-         puts("Inside the loop i = #$i" )
-         $i +=1
-      end while $i < $num
-      $i = @question_number
 
 
 end

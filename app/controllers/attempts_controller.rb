@@ -14,7 +14,6 @@ def create
 
   def update
 
-
     @attempt = Attempt.new(params[:attempt])
     @attempt.user_id = @auth.id
     @attempt.save

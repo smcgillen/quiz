@@ -6,3 +6,6 @@
       / %li= exam.user.username
       %li= link_to(raw(exam.topic + '  &raquo;'), exam, :class => "btn btn-primary")
       %li= time_ago_in_words(exam.created_at) + "ago"
+
+/ %div
+/   = render "results"
